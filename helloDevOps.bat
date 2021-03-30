@@ -1,3 +1,3 @@
 @echo off
-echo "Hello DevOps on Bat file"
+echo "Hello %name%"
 pause
