@@ -7,17 +7,17 @@ pipeline {  // it starts always with pipeline directive and contains an agent di
 stages { //Another required directive is a stages directive, this contains sequences if one or more stages
   stage ('Build'){  // This stage directive requires a steps directive in order to be a valid declarative pipelines.
     steps{ // a step directive instructs Jenkins which command to execute, here we have our echo command
-      echo 'Building stage...'
+      echo 'Building stage Declarative pipeline...'
       }
     }
   stage ('Testing'){
     steps{
-      echo 'Testing stage...'
+      echo 'Testing stage of Declarative pipeline...'
       }
     }
  stage ('Deploy'){
     steps{
-      echo 'Deploy stage...'
+      echo 'Deploy stage Declarative pipeline...'
       } //close steps
     } //close stage
     
