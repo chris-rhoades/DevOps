@@ -16,7 +16,7 @@ agent {
 	    stage('Run Robot Tests') {
 	      steps {
               
-              
+             			sh C:\\Program Files\\Python39\\Scripts\\MyWokspace
 		        	sh 'python3 -m rflint --ignore LineTooLong myapp'
 		        	sh 'python3 -m robot.run --NoStatusRC --variable SERVER:${CT_SERVER} --outputdir reports1 Python39\Scripts\MyWokspace'
 		        	sh 'python3 -m robot.run --NoStatusRC --variable SERVER:${CT_SERVER} --rerunfailed reports1/output.xml --outputdir Results SSH.robot'
