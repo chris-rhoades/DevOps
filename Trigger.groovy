@@ -1,7 +1,7 @@
 pipeline {
-agent {
+ 
       agent any 
-  }
+  
  
   stages {
 	    stage('intialize') {
