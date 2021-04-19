@@ -1,3 +1,4 @@
+pipeline {
 agent {
       agent any 
   }
@@ -25,3 +26,4 @@ agent {
   }
   
 
+}
