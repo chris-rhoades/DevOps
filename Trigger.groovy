@@ -1,5 +1,5 @@
 agent {
-      label 'qatest'
+      agent any 
   }
   environment {
     QA_SERVER = 'https://qa.application.com/'
