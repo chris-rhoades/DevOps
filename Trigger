@@ -25,7 +25,7 @@ pipeline {
                
 	       bat 'python -m rflint --ignore LineTooLong ' 
 		
-*/###################### in this line, we are basically running the robot automation testcases available on folder MyWokspace and save execution results to Results folder */
+/*###################### in this line, we are basically running the robot automation testcases available on folder MyWokspace and save execution results to Results folder */
 		
 				bat 'python -m robot.run --NoStatusRC --variable SERVER:${CT_SERVER} --outputdir Results C:/Program Files/Python39/Scripts//MyWokspace/Results' 
 
