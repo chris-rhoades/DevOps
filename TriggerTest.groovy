@@ -28,10 +28,10 @@ pipeline {
 /*###################### in this line, we are basically running the robot automation testcases available on folder MyWokspace and save execution results to Results folder */
 		
 				bat 'robot -d Results TestSuite1.robot'
-		     	        bat 'robot --output output1.xml tests '
+		     	
 
 /*  ############### Here We are trying to rerun the failed test cases of previous execution #############################*/
-				bat 'robot -d --rerunfailed  Results/output.xml --Results Scripts/MyWokspace '   
+				bat 'robot --rerunfailed  output.xml --Results  output2.xml TestSuite1.robot '   
 	
  /* ############## In this line, We are merging the results of both executions and create a single report ############### */
 		        	bat 'python -m robot.rebot --merge --output reports/output.xml -l reports/log.html -r Results/report.html Results/output.xml Results/output.xml' 
