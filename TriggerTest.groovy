@@ -18,8 +18,8 @@ pipeline {
     
 	    stage('Run Robot Framework Tests') {
 	      steps {				         
-		                bat 'robot -d Results TestSuite1.robot'
-				bat 'exit 0' //In this line, We ask Jenkins pass the build.
+		                //bat 'robot -d Results TestSuite1.robot'
+				//bat 'exit 0' //In this line, We ask Jenkins pass the build.
 				
 /* ############## In this line, we are running robot framework lint to check for Programmatic as well as Stylistic errors on our code base########################		*/				
                
