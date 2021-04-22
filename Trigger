@@ -18,7 +18,7 @@ pipeline {
     
 	    stage('Run Robot Framework Tests') {
 	      steps {		bat 'c:'
-		                bat '/Python39/Scripts/MyWokspace/'
+		             
 		                bat 'robot -d Results TestSuite1.robot'
 		        	/*sh 'python3 -m rflint --ignore LineTooLong myapp' // In this line, we are running robot framework lint to check for Programmatic as well as Stylistic errors on our code base
 		        	sh 'python3 -m robot.run --NoStatusRC --variable SERVER:${CT_SERVER} --outputdir reports1 C:/Program Files/Python39/Scripts/MyWokspace/' //In this line, we are basically running the robot automation testcases available on folder  C:\Program Files\Python39\Scripts\MyWokspace and save execution results to report1
