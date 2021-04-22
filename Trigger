@@ -4,7 +4,7 @@ pipeline {
   
   environment { //In environment block, We define the variables which can be used later within our pipeline script.In above script, I have added our QA and CT application URLs.
     QA_SERVER = 'http://localhost:8080/'
-    CT_SERVER = 'C:\Program Files\Python39\Scripts\MyWokspace\Results'
+    CT_SERVER = 'C:/Program Files/Python39\Scripts/MyWokspace/Results'
 
   }
   stages {
