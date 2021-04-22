@@ -8,11 +8,12 @@ pipeline {
 
   }
   stages {
-	    stage('Intialize Path') { //In above code, we just printing the system path details. just to use in case of failure and as helper details to troubleshoot.
+	   /* stage('Intialize Path') { //In above code, we just printing the system path details. just to use in case of failure and as helper details to troubleshoot.
 	      steps {
 	        sh 'echo "PATH= ${C:/Program Files/Python39/Scripts/MyWokspace}'
 	      }
 	    }
+	    */
     
 	    stage('Run Robot Framework Tests') {
 	      steps {		sh 'c:'
