@@ -23,14 +23,14 @@ pipeline {
 				
 /* ############## In this line, we are running robot framework lint to check for Programmatic as well as Stylistic errors on our code base########################		*/				
                
-	       bat 'python -m rflint --ignore LineTooLong TestSuite1 ' 
+	       bat 'robot -m rflint --ignore LineTooLong TestSuite1 ' 
 		
 /*###################### in this line, we are basically running the robot automation testcases available on folder MyWokspace and save execution results to Results folder */
 		
 				bat 'robot -d Results TestSuite1.robot'
 
 /*  ############### Here We are trying to rerun the failed test cases of previous execution #############################*/
-				bat 'robo --rerunfailed  Results/output.xml'   
+				bat 'robot --rerunfailed  Results/output.xml'   
 	
  /* ############## In this line, We are merging the results of both executions and create a single report ############### */
 		        	bat 'python -m robot.rebot --merge --output reports/output.xml -l reports/log.html -r Results/report.html Results/output.xml Results/output.xml' 
