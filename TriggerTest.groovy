@@ -31,7 +31,7 @@ pipeline {
 		     	
 
 /*  ############### Here We are trying to rerun the failed test cases of previous execution #############################*/
-				bat 'robot --rerunfailed  output.xml --Results  output2.xml TestSuite1.robot '   
+				bat 'robot --rerunfailed  output.xml --output  output2.xml TestSuite1.robot '   
 	
  /* ############## In this line, We are merging the results of both executions and create a single report ############### */
 		        	bat 'python -m robot.rebot --merge --output reports/output.xml -l reports/log.html -r Results/report.html Results/output.xml Results/output.xml' 
