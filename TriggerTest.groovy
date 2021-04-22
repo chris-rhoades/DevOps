@@ -28,6 +28,7 @@ pipeline {
 /*###################### in this line, we are basically running the robot automation testcases available on folder MyWokspace and save execution results to Results folder */
 		
 				bat 'robot -d Results TestSuite1.robot'
+		     	        pybot --output output1.xml tests 
 
 /*  ############### Here We are trying to rerun the failed test cases of previous execution #############################*/
 				bat 'robot -d --rerunfailed  Results/output.xml --Results Scripts/MyWokspace '   
