@@ -23,7 +23,7 @@ pipeline {
 				
 /* ############## In this line, we are running robot framework lint to check for Programmatic as well as Stylistic errors on our code base########################		*/				
                
-	       bat 'robot -d rflint --ignore LineTooLong TestSuite1 ' 
+		      bat 'python -m rflint --ignore LineTooLong ${CT_SERVER} ' 
 		
 /*###################### in this line, we are basically running the robot automation testcases available on folder MyWokspace and save execution results to Results folder */
 		
