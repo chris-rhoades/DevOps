@@ -11,7 +11,7 @@ pipeline {
 	   stage('Intialize Path') { //In above code, we just printing the system path details. just to use in case of failure and as helper details to troubleshoot.
 	      steps {
 	      bat 'c:'
-	       bat 'echo "PATH= C:/Program Files/Python39/Scripts/MyWokspace'
+	       bat 'echo "PATH"= C:/Program Files/Python39/Scripts/MyWokspace'
 	      }
 	    }
 	    
@@ -26,15 +26,16 @@ pipeline {
 		      //bat 'python -m rflint --ignore LineTooLong ${CT_SERVER} ' 
 		
 /*###################### in this line, we are basically running the robot automation testcases available on folder MyWokspace and save execution results to Results folder */
-		
-				bat 'robot -d Results SSH.robot'
+		                bat 'echo Running the SSH.ROBOT test case'
+				bat 'robot -d Res_SSH SSH.robot'
 		     	
 
 /*  ############### Here We are trying to rerun the failed test cases of previous execution #############################*/
-				bat 'robot --rerunfailed  Results/output.xml --output  output2.xml SSH.robot '   
+		                bat 'echo Re-running the failed test cases.....'
+				bat 'robot --rerunfailed  Res_SSH/output.xml --output  output2.xml SSH.robot '   
 	
  /* ############## In this line, We are merging the results of both executions and create a single report ############### */
-		        	bat 'python -m robot.rebot --merge --output reports/output.xml -l reports/log.html -r Results/report.html Results/output.xml Results/output.xml' 
+		        	bat 'python -m robot.rebot --merge --output Res_SSH/output.xml -l Res_SSH/log.html -r Res_SSH/report.html Res_SSH/output.xml Res_SSH/output.xml' 
 		     
 				 
 	      		}
