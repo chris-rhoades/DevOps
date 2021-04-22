@@ -27,7 +27,7 @@ pipeline {
 		
 /*###################### in this line, we are basically running the robot automation testcases available on folder MyWokspace and save execution results to Results folder */
 		
-				bat 'robot -d --NoStatusRC --variable SERVER:${CT_SERVER} --outputdir PATH= C:/Program Files/Python39/Scripts/MyWokspace ' 
+				bat 'robot -d --NoStatusRC --variable SERVER:${CT_SERVER} --outputdir SERVER:${CT_SERVER}  ' 
 
 /*  ############### Here We are trying to rerun the failed test cases of previous execution #############################*/
 				bat 'robot.run --NoStatusRC --variable SERVER:${CT_SERVER} --rerunfailed Results/output.xml --outputdir Results' 
