@@ -30,7 +30,7 @@ pipeline {
 				bat 'robot -d Results TestSuite1.robot'
 
 /*  ############### Here We are trying to rerun the failed test cases of previous execution #############################*/
-				bat 'robot -d Results TestSuite1.robot --rerunfailed Results/output.xml --outputdir Results' 
+				bat 'robot -d Results TestSuite1.robot --rerunfailed -S Results/output.xml --Results MyWokspace/' 
 	
  /* ############## In this line, We are merging the results of both executions and create a single report ############### */
 		        	bat 'python -m robot.rebot --merge --output reports/output.xml -l reports/log.html -r Results/report.html Results/output.xml Results/output.xml' 
