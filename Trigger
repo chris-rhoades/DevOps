@@ -26,7 +26,7 @@ pipeline {
 	
 		        	bat 'python -m robot.rebot --merge --output reports/output.xml -l reports/log.html -r Results/report.html Results/output.xml Results/output.xml' //In this line, We are merging the results of both executions and create a single report
 		     
-				*/
+				 
 	      		}
 	      post { //In this post block, We are passing the above generated execution results files to the Robot Framework Plugin.  Plugin will transform and show the results on Jenkins.
         	always {
