@@ -27,10 +27,10 @@ pipeline {
 		
 /*###################### in this line, we are basically running the robot automation testcases available on folder MyWokspace and save execution results to Results folder */
 		
-				bat 'python -m robot.run --NoStatusRC --variable SERVER:${CT_SERVER} --outputdir Results 'C:/Program Files/Python39/Scripts//MyWokspace/Results'' 
+				bat 'python -m robot.run --NoStatusRC --variable SERVER:${CT_SERVER} --outputdir Results ' 
 
 /*  ############### Here We are trying to rerun the failed test cases of previous execution #############################*/
-				bat 'robot.run --NoStatusRC --variable SERVER:${CT_SERVER} --rerunfailed Results/output.xml --outputdir reports C:/Program Files/Python39/Scripts//MyWokspace/Results' 
+				bat 'robot.run --NoStatusRC --variable SERVER:${CT_SERVER} --rerunfailed Results/output.xml --outputdir Results' 
 	
  /* ############## In this line, We are merging the results of both executions and create a single report ############### */
 		        	bat 'python -m robot.rebot --merge --output reports/output.xml -l reports/log.html -r Results/report.html Results/output.xml Results/output.xml' 
