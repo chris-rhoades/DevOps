@@ -46,7 +46,7 @@ pipeline {
 		          step(
 			            [
 			              $class              : 'RobotPublisher',
-			              outputPath          : 'Results',
+			              outputPath          : 'Result_SSH',
 			              outputFileName      : '**/output.xml',
 			              reportFileName      : '**/report.html',
 			              logFileName         : '**/log.html',
