@@ -10,8 +10,8 @@ pipeline {
   stages {
 	   stage('Intialize Path') { //In above code, we just printing the system path details. just to use in case of failure and as helper details to troubleshoot.
 	      steps {
-	      bat 'c:'
-	      bat 'C:/Program Files/Python39/Scripts/MyWokspace'
+	      bat 'cd:'
+	      bat 'cd C:/Program Files/Python39/Scripts/MyWokspace'
 	       bat 'echo "PATH"= C:/Program Files/Python39/Scripts/MyWokspace'
 	      }
 	    }
