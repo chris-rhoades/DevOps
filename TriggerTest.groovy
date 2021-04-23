@@ -4,13 +4,13 @@ pipeline {
   
   environment { //In environment block, We define the variables which can be used later within our pipeline script.In above script, I have added our QA and CT application URLs.
     QA_SERVER = 'http://localhost:8080/'
-    CT_SERVER = 'C:/Program Files/Python39/Scripts/MyWokspace'
+    CT_SERVER = 'cd c:/Program Files/Python39/Scripts/MyWokspace'
 
   }
   stages {
 	   stage('Intialize Path') { //In above code, we just printing the system path details. just to use in case of failure and as helper details to troubleshoot.
 	      steps {
-	      bat 'cd:'
+	      bat 'c:'
 	      bat 'cd C:/Program Files/Python39/Scripts/MyWokspace'
 	       bat 'echo "PATH"= C:/Program Files/Python39/Scripts/MyWokspace'
 	      }
