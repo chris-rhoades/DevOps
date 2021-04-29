@@ -11,9 +11,9 @@ pipeline {
 	
   stages {
 	  
-stage(' Path') { //In above code, we just printing the system path details. just to use in case of failure and as helper details to troubleshoot.
+stage(' Path Print') { //In above code, we just printing the system path details. just to use in case of failure and as helper details to troubleshoot.
 	      steps {
-	      print ("The Path environment is: ",env.first_path)	 
+	      print ("The Path environment is: " env.first_path)	 
 	       
 	      }
 	    }
