@@ -3,20 +3,14 @@ pipeline {
       
   
   environment { //In environment block, We define the variables which can be used later within our pipeline script.In above script, I have added our QA and CT application URLs.
-    QA_SERVER = 'http://localhost:8080/'
-    CT_SERVER = 'cd c:/Program Files/Python39/Scripts/MyWokspace'
+   PATH = "/Program Files/Python39/Scripts/MyWokspace:${env.PATH}"
+   JNK_PATH = "${env.WORKSPACE}\\subdir"
 
   } 
 	
   stages {
 	  
-		stage (' Enviroment'){
-			steps{
-			sh 'env.WORKSPACE=pwd()'
-				
-			bat 'echo "${env.WORKSPACE}" '
-		}
-		}
+
 		       
 	
 	
