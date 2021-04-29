@@ -12,8 +12,8 @@ pipeline {
 	      steps {
 	      bat 'c:'
 	      bat 'cd c:/Program Files/Python39/Scripts/MyWokspace'
-	      path = "${workspace}/pic_env_vars.properties"
-	      loadProperties(path)
+	      bat 'path = "${workspace}/pic_env_vars.properties" '
+	      bat 'loadProperties(path)'
 	      
 	      }
 	    }
