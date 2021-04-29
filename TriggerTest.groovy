@@ -42,7 +42,7 @@ stage(' Path') { //In above code, we just printing the system path details. just
 		
 /*###################### in this line, we are basically running the robot automation testcases available on folder MyWokspace and save execution results to Results folder */
 		        bat 'echo Running the SSH.ROBOT test case'
-			bat 'robot -d Result_SSH SSH.robot'
+			bat 'robot -T Result_SSH SSH.robot'
 		     	
 
 /*  ############### Here We are trying to rerun the failed test cases of previous execution #############################*/
