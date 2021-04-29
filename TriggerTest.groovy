@@ -12,8 +12,8 @@ pipeline {
 	  
 		stage (' Enviroment'){
 			steps{
-			env.WORKSPACE=pwd()
-			echo "${env.WORKSPACE}"
+			bat 'env.WORKSPACE=pwd()'
+			bat 'echo "${env.WORKSPACE}" '
 		}
 		}
 		       
