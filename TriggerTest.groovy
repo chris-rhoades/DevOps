@@ -7,7 +7,9 @@ pipeline {
     CT_SERVER = 'cd c:/Program Files/Python39/Scripts/MyWokspace'
 
   } */
-	node {
+	
+  stages {
+	  node {
 		stage (' Enviroment'){
 			env.WORKSPACE=pwd()
 			echo "${env.WORKSPACE}"
@@ -15,7 +17,6 @@ pipeline {
 		       
 	
 	}
-  stages {
 	   stage('Intialize Path') { //In above code, we just printing the system path details. just to use in case of failure and as helper details to troubleshoot.
 	      steps {
 	      bat 'c:'
