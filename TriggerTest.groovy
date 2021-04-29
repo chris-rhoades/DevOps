@@ -10,7 +10,12 @@ pipeline {
 	
   stages {
 	  
-
+stage(' Path') { //In above code, we just printing the system path details. just to use in case of failure and as helper details to troubleshoot.
+	      steps {
+	      print (env.first_path)	 
+	      
+	      }
+	    }
 		       
 	
 	
@@ -70,4 +75,9 @@ pipeline {
 	}    
   }
   
+}
+def get_first() {
+    node('master') {
+        return env.PATH.split(':')[0]
+    }
 }
