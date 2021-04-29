@@ -11,8 +11,10 @@ pipeline {
   stages {
 	  
 		stage (' Enviroment'){
+			steps{
 			env.WORKSPACE=pwd()
 			echo "${env.WORKSPACE}"
+		}
 		}
 		       
 	
