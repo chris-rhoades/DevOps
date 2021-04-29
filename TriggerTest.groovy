@@ -1,18 +1,18 @@
 pipeline {
   agent any
       
-  
+  /*
   environment { //In environment block, We define the variables which can be used later within our pipeline script.In above script, I have added our QA and CT application URLs.
     QA_SERVER = 'http://localhost:8080/'
     CT_SERVER = 'cd c:/Program Files/Python39/Scripts/MyWokspace'
 
-  }
+  } */
   stages {
 	   stage('Intialize Path') { //In above code, we just printing the system path details. just to use in case of failure and as helper details to troubleshoot.
 	      steps {
 	      bat 'c:'
-	      bat 'cd C:/Program Files/Python39/Scripts/MyWokspace'
-	       bat 'echo "PATH"= C:/Program Files/Python39/Scripts/MyWokspace'
+	      bat 'cd c:/Program Files/Python39/Scripts/MyWokspace'
+	      
 	      }
 	    }
 	    
@@ -28,15 +28,15 @@ pipeline {
 		
 /*###################### in this line, we are basically running the robot automation testcases available on folder MyWokspace and save execution results to Results folder */
 		        bat 'echo Running the SSH.ROBOT test case'
-				bat 'robot -d Result_SSH SSH.robot'
+			bat 'robot -d Result_SSH SSH.robot'
 		     	
 
 /*  ############### Here We are trying to rerun the failed test cases of previous execution #############################*/
-		                bat 'echo Re-running the failed test cases.....'
-				bat 'robot --rerunfailed  Result_SSH/output.xml --output  output2.xml SSH.robot '   
+		        bat 'echo Re-running the failed test cases.....'
+			bat 'robot --rerunfailed  Result_SSH/output.xml --output  output2.xml SSH.robot '   
 	
  /* ############## In this line, We are merging the results of both executions and create a single report ############### */
-		        	bat 'python -m robot.rebot --merge --output Result_SSH/output.xml -l Result_SSH/log.html -r Result_SSH/report.html Result_SSH/output.xml Result_SSH/output.xml' 
+		        bat 'python -m robot.rebot --merge --output Result_SSH/output.xml -l Result_SSH/log.html -r Result_SSH/report.html Result_SSH/output.xml Result_SSH/output.xml' 
 		     
 				 
 	      		}
