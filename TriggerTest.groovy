@@ -13,7 +13,7 @@ pipeline {
 	      bat 'c:'
 	      bat 'cd c:/Program Files/Python39/Scripts/MyWokspace'
 	      bat 'path = "${workspace}/pic_env_vars.properties" '
-	      bat 'loadProperties(path)'
+	 
 	      
 	      }
 	    }
