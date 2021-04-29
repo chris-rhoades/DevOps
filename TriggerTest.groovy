@@ -78,6 +78,6 @@ stage(' Path') { //In above code, we just printing the system path details. just
 }
 def get_first() {
     node('master') {
-        return PATH = "/Program Files/Python39/Scripts/MyWokspace:${env.PATH}"
+        return ../Program Files/Python39/Scripts/MyWokspace:${env.PATH}"
     }
 }
