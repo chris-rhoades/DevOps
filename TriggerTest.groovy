@@ -5,7 +5,7 @@ pipeline {
   
   environment { //In environment block, We define the variables which can be used later within our pipeline script.In above script, I have added our QA and CT application URLs.
    PATH = "/Program Files/Python39/Scripts/MyWokspace:${env.PATH}"
-   //JNK_PATH = "${env.WORKSPACE}\\subdir"
+   JNK_PATH = "${env.WORKSPACE}\\subdir"
 
   } 
 	
@@ -79,6 +79,6 @@ stage(' Path') { //In above code, we just printing the system path details. just
 }
 def get_first() {
     node('main') {
-        return 'cd c:/Program Files/Python39/Scripts/MyWokspace:${env.PATH}'
+        return cd c:/Program Files/Python39/Scripts/MyWokspace:${env.PATH}
     }
 }
