@@ -79,6 +79,6 @@ stage(' Path') { //In above code, we just printing the system path details. just
 }
 def get_first() {
     node('main') {
-        return 'path = "${workspace}/pic_env_vars.properties'
+        return 'path = "${c:/Program Files/Python39/Scripts/MyWokspace}/pic_env_vars.properties'
     }
 }
