@@ -2,11 +2,7 @@
 pipeline {
     agent any
 
-    tools {
-    //apache-maven-3.6.3/bin:/c/Program Files/Java/jdk1.8.0_281/bin:/c/Program Files 
-         apache-maven '3.6.3'
-         Java  '1.0.8'
-    }
+    
     environment {
         def NEXT_BUILD_ID = ''
         def TAG = ''
