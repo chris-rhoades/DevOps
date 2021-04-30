@@ -1,3 +1,4 @@
+#!/usr/bin/groovy
 pipeline {
     agent any
 
