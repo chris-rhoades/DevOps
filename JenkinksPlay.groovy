@@ -5,7 +5,7 @@ pipeline {
     tools {
     //apache-maven-3.6.3/bin:/c/Program Files/Java/jdk1.8.0_281/bin:/c/Program Files 
          apache-maven '3.6.3'
-         Java  ''
+         Java  '1.0.8'
     }
     environment {
         def NEXT_BUILD_ID = ''
@@ -68,7 +68,7 @@ pipeline {
         stage('Prepare Branch') {
             when {
                 not {
-                    branch 'master'
+                    branch 'main' //master
                 }
             }
             // don't modify the versions on the branch itself, just the tag
@@ -83,7 +83,7 @@ pipeline {
 
         stage('Prepare Master') {
             when {
-                branch 'master'
+                branch 'main' // master111
             }
             steps {
                 sh 'git checkout ${BRANCH_NAME}'
