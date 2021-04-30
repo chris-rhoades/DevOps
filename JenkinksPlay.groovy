@@ -5,7 +5,7 @@ pipeline {
     tools {
     //apache-maven-3.6.3/bin:/c/Program Files/Java/jdk1.8.0_281/bin:/c/Program Files 
          apache-maven '3.6.3'
-         Java  
+         Java  ''
     }
     environment {
         def NEXT_BUILD_ID = ''
