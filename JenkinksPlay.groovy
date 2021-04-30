@@ -1,8 +1,11 @@
-#!/usr/bin/groovy
 pipeline {
     agent any
 
-    
+    tools {
+        java '1.8.0_291'
+        maven '3.6.3'
+        jdk '8u151'
+    }
     environment {
         def NEXT_BUILD_ID = ''
         def TAG = ''
@@ -64,7 +67,7 @@ pipeline {
         stage('Prepare Branch') {
             when {
                 not {
-                    branch 'main' //master
+                    branch 'master'
                 }
             }
             // don't modify the versions on the branch itself, just the tag
@@ -79,7 +82,7 @@ pipeline {
 
         stage('Prepare Master') {
             when {
-                branch 'main' // master111
+                branch 'master'
             }
             steps {
                 sh 'git checkout ${BRANCH_NAME}'
@@ -137,10 +140,10 @@ pipeline {
     }
     post {
         failure {
-            mail to: "adam.mitchell@playtech.com", bcc: '', body: "<b>${env.JOB_NAME}</b><br>Branch: ${BRANCH_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> build URL: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: 'Corosin Jenkins <no-reply@playtech.corp>', mimeType: 'text/html', replyTo: 'no-reply@playtech.corp', subject: "Build Failed: ${env.JOB_NAME} - ${BRANCH_NAME}"
+            mail to: "adam.mitchell@playtech.com,daniel.triggs@playtech.com,james.owens@playtech.com,Marco.Rodrigues@playtech.com,leon.sucharov@playtech.com", bcc: '', body: "<b>${env.JOB_NAME}</b><br>Branch: ${BRANCH_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> build URL: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: 'Corosin Jenkins <no-reply@playtech.corp>', mimeType: 'text/html', replyTo: 'no-reply@playtech.corp', subject: "Build Failed: ${env.JOB_NAME} - ${BRANCH_NAME}"
         }
         unstable {
-            mail to: "glad", bcc: '', body: "<b>${env.JOB_NAME}</b><br>Branch: ${BRANCH_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> build URL: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: 'Corosin Jenkins <no-reply@playtech.corp>', mimeType: 'text/html', replyTo: 'no-reply@playtech.corp', subject: "Build Unstable: ${env.JOB_NAME} - ${BRANCH_NAME}"
+            mail to: "adam.mitchell@playtech.com,daniel.triggs@playtech.com,james.owens@playtech.com,Marco.Rodrigues@playtech.com,leon.sucharov@playtech.com", bcc: '', body: "<b>${env.JOB_NAME}</b><br>Branch: ${BRANCH_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> build URL: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: 'Corosin Jenkins <no-reply@playtech.corp>', mimeType: 'text/html', replyTo: 'no-reply@playtech.corp', subject: "Build Unstable: ${env.JOB_NAME} - ${BRANCH_NAME}"
         }
         always {
             deleteDir()
