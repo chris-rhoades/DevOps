@@ -4,7 +4,7 @@ pipeline {
 
     tools {
         Apache maven '3.6.3'
-        jdk '1.8.0'
+        jre '1.8.0'
     }
     environment {
         def NEXT_BUILD_ID = ''
