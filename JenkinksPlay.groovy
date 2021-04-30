@@ -1,11 +1,11 @@
 #!/usr/bin/groovy
 pipeline {
     agent any
-
+/*
     tools {
          maven '3.6.3'
         //jdk '1.8.0'
-    }
+    }*/
     environment {
         def NEXT_BUILD_ID = ''
         def TAG = ''
